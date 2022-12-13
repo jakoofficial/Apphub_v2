@@ -1,0 +1,71 @@
+﻿<Window x:Class="AppHub_v._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppHub_v._2"
+        xmlns:uc="clr-namespace:AppHub_v._2.UserControls"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        WindowState="Normal"
+        ResizeMode="NoResize"
+        Background="#2A323F"
+        FontFamily="Inter"
+        Title="MainWindow" Height="550" Width="900">
+    <Grid>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Top" x:Name="TopbarDrag" Background="Transparent" Height="50" VerticalAlignment="Top" Orientation="Vertical" MouseDown="TopbarDrag_MouseDown">
+                <Grid>
+                    <Border Style="{StaticResource TopBar}">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource TopBarMenuBtn}" Content="File"/>
+                            <Button ToolTip="Edit the hub" Style="{StaticResource TopBarMenuBtn}" Content="Edit"/>
+                            <Button ToolTip="Add new" Padding="0" Style="{StaticResource TopBarMenuBtnEnd}">
+                                <Image Height="25" Width="25" SnapsToDevicePixels="True" Source="/Images/icon_Add.png"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                    <Border Width="300" CornerRadius="0 0 0 10" Style="{StaticResource TopBar}" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="App hub" Style="{StaticResource AppTitle}"/>
+                            <Button Padding="0" x:Name="btnTopBarMenuMini" Click="btnTopBarMenuMini_Click" Style="{StaticResource TopBarMenuBtn}">
+                                <Image Height="25" Width="25" SnapsToDevicePixels="True" Source="/Images/icon_Mini.png"/>
+                            </Button>
+                            <Button x:Name="btnTopBarMenuClose" Click="btnTopBarMenuClose_Click" Style="{StaticResource TopBarMenuCloseBtn}">
+                                <Image Height="25" Width="25" SnapsToDevicePixels="True" Source="/Images/icon_Close.png"/>
+                            </Button>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+            <!-- The page -->
+            <ScrollViewer DockPanel.Dock="Bottom" VerticalScrollBarVisibility="Hidden">
+                <StackPanel x:Name="stPage" Width="900" Margin="0 0 0 0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                    <TextBlock>
+                        <StackPanel Margin="25 0" Orientation="Horizontal">
+                            <Label x:Name="catLabel" FontSize="14" Foreground="#E2E2E2" Content="- Category"/>
+                            <Button x:Name="test" Click="test_Click" Style="{StaticResource BtnExpandCat}"/>
+                            <Line x:Name="lineTest" X1="0" X2="5" Y1="12.5" Y2="12.5" Stroke="White"/>
+                        </StackPanel>
+                    </TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <WrapPanel Width="900" Orientation="Horizontal">
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                            <uc:AppShortcut/>
+                        </WrapPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Window>
