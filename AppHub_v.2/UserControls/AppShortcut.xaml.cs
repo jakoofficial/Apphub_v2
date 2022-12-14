@@ -21,14 +21,19 @@ namespace AppHub_v._2.UserControls
     /// </summary>
     public partial class AppShortcut : UserControl
     {
+        public string appName { get; set; }
+        public string appPath { get; set; }
+        public string imgPath { get; set; }
+
         public AppShortcut()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
-        private void test_Click(object sender, RoutedEventArgs e)
+        private void openApp_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("Test");
+
         }
     }
 }

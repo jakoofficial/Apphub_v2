@@ -11,7 +11,7 @@
 
     <Style TargetType="Label" x:Key="AppTitle">
         <Setter Property="Foreground" Value="#fff"/>
-        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="MinWidth" Value="50"/>
         <Setter Property="MinHeight" Value="50"/>
         <Setter Property="TextBlock.TextAlignment" Value="center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -208,6 +208,230 @@
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Cursor" Value="Hand"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Cursor" Value="Arrow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="Background" Value="#E2E2E2"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Padding" Value="2 7 0 0"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="MinWidth" Value="200"/>
+        <Setter Property="MinHeight" Value="25"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <StackPanel>
+                        <Border
+                            x:Name="Border"
+                            MinHeight="{TemplateBinding Height}"
+                            MinWidth="{TemplateBinding Width}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="0 0 10 0">
+                            <Border.Effect>
+                                <DropShadowEffect Direction="285" 
+                                  ShadowDepth="5" 
+                                  Opacity="0.25"
+                                  BlurRadius="4"
+                                  Color="#000"/>
+                            </Border.Effect>
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Focusable="False"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden">
+                            </ScrollViewer>
+                        </Border>
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="BorderBrush"
+                                        TargetName="Border"
+                                        Value="#6B6B6B"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="PathBtnAddNew">
+        <Setter Property="Background" Value="#C1C1C1"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0 10"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="FontSize" Value="16"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="50"
+                            Height="49"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="0 0 10 0"
+                            SnapsToDevicePixels="True"
+                            >
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#989898"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#C1C1C1"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Cursor" Value="Arrow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="Button" x:Key="AddNewBtnCreate">
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="0 10"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="0"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            Height="{TemplateBinding MinHeight}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Border.Effect>
+                            <DropShadowEffect Direction="285" 
+                                        ShadowDepth="5" 
+                                        Opacity="0.25"
+                                        BlurRadius="4"
+                                        Color="#000"/>
+                        </Border.Effect>
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#608A4D"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#4E713D"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Cursor" Value="Arrow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="Button" x:Key="AddNewBtnCancel">
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="40"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Padding" Value="0 10"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="TextBlock.TextAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border BorderThickness="0"
+                            MinWidth="{TemplateBinding MinWidth}"
+                            Height="{TemplateBinding MinHeight}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}"
+                            CornerRadius="10"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Border.Effect>
+                            <DropShadowEffect Direction="285" 
+                                        ShadowDepth="5" 
+                                        Opacity="0.25"
+                                        BlurRadius="4"
+                                        Color="#000"/>
+                        </Border.Effect>
+                        <ContentPresenter/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#A94242"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#883535"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="False">
                 <Setter Property="Cursor" Value="Arrow"/>

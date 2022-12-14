@@ -13,6 +13,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AppHub_v._2.UserControls;
 
 namespace AppHub_v._2
 {
@@ -26,7 +27,7 @@ namespace AppHub_v._2
             InitializeComponent();
 
             //lineTest.X2 = (stPage.Width - catLabel.Width);
-            lineTest.X2 = stPage.Width-25;
+            lineTest.X2 = stPage.Width - 25;
         }
 
         private void TopbarDrag_MouseDown(object sender, MouseButtonEventArgs e)
@@ -49,14 +50,31 @@ namespace AppHub_v._2
         private void test_Click(object sender, RoutedEventArgs e)
         {
             Button btn = (Button)sender;
-            if (!isRotated) RotateBtn(btn, -90);
-            else RotateBtn(btn, 0);
+            if (!isRotated)
+            {
+                RotateBtn(btn, -90);
+                stTesting.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                RotateBtn(btn, 0);
+                stTesting.Visibility = Visibility.Visible;
+            }
         }
 
         public void RotateBtn(Button btn, int angle)
         {
             isRotated = !isRotated;
             btn.RenderTransform = new RotateTransform(angle, 12.5, 12.5);
+        }
+
+        private void btnAddNew_Click(object sender, RoutedEventArgs e)
+        {
+            newWinOverlay.Visibility = Visibility.Visible;
+            newWinOverlay.IsHitTestVisible = true;
+
+            AddNew an = new AddNew();
+            an.Show();
         }
     }
 }
