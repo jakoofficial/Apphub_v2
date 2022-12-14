@@ -51,7 +51,7 @@
                     </Grid>
                 </StackPanel>
 
-                <uc:AppShortcut x:Name="newApp" Margin="100 19 0 0" HorizontalAlignment="Left"/>
+                <uc:AppShortcut Margin="100 19 0 0" HorizontalAlignment="Left"/>
 
                 <StackPanel Margin="20 10 20 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                     <Button Margin="0 0 120 0" Click="btnTopBarMenuClose_Click" Style="{StaticResource AddNewBtnCancel}" Background="#883535" Content="Cancel"/>

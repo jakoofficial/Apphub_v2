@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using AppHub_v._2.UserControls;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -47,7 +48,15 @@ namespace AppHub_v._2
 
         private void btnCreateApp_Click(object sender, RoutedEventArgs e)
         {
+            AppShortcut AS = new AppShortcut();
+            AS.appName = tbxAppName.Text;
+            AS.appPath = tbxAppPath.Text;
+            AS.imgPath = tbxAppImgPath.Text;
+            mw.testingWP.Children.Add(AS);
 
+            mw.newWinOverlay.Visibility = Visibility.Collapsed;
+            mw.newWinOverlay.IsHitTestVisible = false;
+            this.Close();
         }
 
         private void btnGetAppPath_Click(object sender, RoutedEventArgs e)

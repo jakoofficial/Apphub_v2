@@ -55,8 +55,6 @@
                             <StackPanel x:Name="stTesting">
                                 <WrapPanel x:Name="testingWP" Width="900" Orientation="Horizontal">
                                     <uc:AppShortcut/>
-                                    <uc:AppShortcut/>
-                                    <uc:AppShortcut/>
                                 </WrapPanel>
                             </StackPanel>
                         </StackPanel>
