@@ -63,7 +63,7 @@
         </Button>
         <Border IsHitTestVisible="False" CornerRadius="10 10 7 7" Opacity=".5">
             <Border.Background>
-                <ImageBrush Stretch="Fill" ImageSource="{Binding imgPath}"/>
+                <ImageBrush x:Name="img" Stretch="Fill" ImageSource="{Binding imgPath}"/>
             </Border.Background>
         </Border>
         <Border Opacity=".77" IsHitTestVisible="False"

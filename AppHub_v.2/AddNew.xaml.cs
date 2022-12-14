@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +43,31 @@ namespace AppHub_v._2
         private void btnTopBarAddNewMenuMini_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void btnCreateApp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnGetAppPath_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == true)
+            {
+                string filePath = ofd.FileName; //gets the path
+                tbxAppPath.Text = filePath;
+            }
+        }
+
+        private void btnAppImgPath_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == true)
+            {
+                string filePath = ofd.FileName; //gets the path
+                tbxAppImgPath.Text = filePath;
+            }
         }
     }
 }

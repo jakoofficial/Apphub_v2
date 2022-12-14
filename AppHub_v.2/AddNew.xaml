@@ -20,7 +20,7 @@
                 <Grid>
                     <Border Width="185" CornerRadius="0 0 0 10" Style="{StaticResource TopBar}" HorizontalAlignment="Right">
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="App hub" Width="85" Style="{StaticResource AppTitle}"/>
+                            <Label Content="Add new" Width="85" Style="{StaticResource AppTitle}"/>
                             <Button Padding="0" x:Name="btnTopBarAddNewMenuMini" Click="btnTopBarAddNewMenuMini_Click" Style="{StaticResource TopBarMenuBtn}">
                                 <Image Height="25" Width="25" SnapsToDevicePixels="True" Source="/Images/icon_Mini.png"/>
                             </Button>
@@ -34,28 +34,28 @@
             <StackPanel DockPanel.Dock="Bottom">
                 <StackPanel Width="360">
                     <Label FontSize="14" Padding="0" Content="App name" Foreground="White"/>
-                    <TextBox Text="testing" Height="49" />
+                    <TextBox x:Name="tbxAppName" Text="testing" Height="49" />
                 </StackPanel>
                 <StackPanel Margin="0 11 0 11" Width="360">
                     <Label FontSize="14" Padding="0" Content="App path" Foreground="White"/>
                     <Grid>
-                        <TextBox Text="testing" Height="49" />
-                        <Button Style="{StaticResource PathBtnAddNew}" HorizontalAlignment="Right" Width="50" Content="..." />
+                        <TextBox x:Name="tbxAppPath" Text="testing" HorizontalAlignment="Left" Height="49" Width="310" Style="{StaticResource tbxFilepath}" />
+                        <Button x:Name="btnGetAppPath" Click="btnGetAppPath_Click" Style="{StaticResource PathBtnAddNew}" HorizontalAlignment="Right" Width="50" Content="..." />
                     </Grid>
                 </StackPanel>
                 <StackPanel Width="360">
                     <Label FontSize="14" Padding="0" Content="App icon path" Foreground="White"/>
                     <Grid>
-                        <TextBox Text="testing" Height="49"/>
-                        <Button Style="{StaticResource PathBtnAddNew}" HorizontalAlignment="Right" Width="50" Content="..." />
+                        <TextBox x:Name="tbxAppImgPath" Text="testing" HorizontalAlignment="Left" Height="49" Width="310" Style="{StaticResource tbxFilepath}"/>
+                        <Button x:Name="btnAppImgPath" Click="btnAppImgPath_Click" Style="{StaticResource PathBtnAddNew}" HorizontalAlignment="Right" Width="50" Content="..." />
                     </Grid>
                 </StackPanel>
 
-                <uc:AppShortcut Margin="100 19 0 0" HorizontalAlignment="Left"/>
+                <uc:AppShortcut x:Name="newApp" Margin="100 19 0 0" HorizontalAlignment="Left"/>
 
                 <StackPanel Margin="20 10 20 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                     <Button Margin="0 0 120 0" Click="btnTopBarMenuClose_Click" Style="{StaticResource AddNewBtnCancel}" Background="#883535" Content="Cancel"/>
-                    <Button Style="{StaticResource AddNewBtnCreate}" Background="#4E713D" Content="Create"/>
+                    <Button x:Name="btnCreateApp" Style="{StaticResource AddNewBtnCreate}" Click="btnCreateApp_Click" Background="#4E713D" Content="Create"/>
                 </StackPanel>
             </StackPanel>
         </DockPanel>
