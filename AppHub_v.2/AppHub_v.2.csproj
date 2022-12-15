@@ -13,6 +13,7 @@
     <None Remove="Images\icon_Close.png" />
     <None Remove="Images\icon_Expand.png" />
     <None Remove="Images\icon_Mini.png" />
+    <None Remove="Images\icon_Refresh.png" />
     <None Remove="Images\img_test.jpg" />
   </ItemGroup>
 
@@ -27,6 +28,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\icon_Mini.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\icon_Refresh.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\img_test.jpg">

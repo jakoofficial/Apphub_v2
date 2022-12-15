@@ -311,7 +311,7 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <Style TargetType="Button" x:Key="PathBtnAddNew">
         <Setter Property="Background" Value="#C1C1C1"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -484,6 +484,70 @@
                             <ColorAnimation 
                                 Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
                                 To="#883535"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="False">
+                <Setter Property="Cursor" Value="Arrow"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="btnReloadNew" TargetType="Button">
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Background" Value="#FF6B6B6B"/>
+        <Setter Property="Padding" Value="5"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            BorderThickness="0"
+                            CornerRadius="25"
+                            SnapsToDevicePixels="True"
+                            >
+                        <Border.Effect>
+                            <DropShadowEffect Direction="285" 
+                                        ShadowDepth="5" 
+                                        Opacity="0.25"
+                                        BlurRadius="4"
+                                        Color="#000"/>
+                        </Border.Effect>
+                        <Grid>
+                            <Image Source="/Images/icon_Refresh.png"/>
+                            <ContentPresenter/>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#FF909090"
+                                Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation 
+                                Storyboard.TargetProperty="Background.(SolidColorBrush.Color)"
+                                To="#FF6B6B6B"
                                 Duration="0:0:0.15"/>
                         </Storyboard>
                     </BeginStoryboard>

@@ -78,5 +78,17 @@ namespace AppHub_v._2
                 tbxAppImgPath.Text = filePath;
             }
         }
+
+        private void btnReloadImg_Click(object sender, RoutedEventArgs e)
+        {
+            tempAppShortcut.Children.Clear();
+
+            AppShortcut aps = new AppShortcut();
+            aps.appName = tbxAppName.Text;
+            aps.appPath = "";
+            aps.imgPath = tbxAppImgPath.Text;
+
+            tempAppShortcut.Children.Add(aps);
+        }
     }
 }

@@ -51,7 +51,14 @@
                     </Grid>
                 </StackPanel>
 
-                <uc:AppShortcut Margin="100 19 0 0" HorizontalAlignment="Left"/>
+                <Grid Margin="100 19 0 0" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid x:Name="tempAppShortcut">
+                            <uc:AppShortcut />
+                        </Grid>
+                        <Button Click="btnReloadImg_Click" ToolTip="Reload test shortcut" x:Name="btnReloadImg" Margin="10 0 0 19" Style="{StaticResource btnReloadNew}"/>
+                    </StackPanel>
+                </Grid>
 
                 <StackPanel Margin="20 10 20 0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                     <Button Margin="0 0 120 0" Click="btnTopBarMenuClose_Click" Style="{StaticResource AddNewBtnCancel}" Background="#883535" Content="Cancel"/>
